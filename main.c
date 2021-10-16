@@ -6,7 +6,6 @@
 //Protótipos das funções
 void tela(float *a,float *b,char op,int *x, int *y,float *resultado);
 void operacoes(float *a,float *b,char op,int *x, int *y,float *resultado);
-
 float soma (float *a,float *b,float *resultado);
 float sub (float *a, float *b,float *resultado);
 float multiplicacao (float *a, float *b,float *resultado); 
@@ -24,7 +23,6 @@ int main(void) {
 	
  tela(a,b,op,x,y,resultado);//Chamada das funções
  
- 
  printf("Resultado: %.0f",*resultado);
 
 //Liberando memória dos ponteiros
@@ -37,7 +35,7 @@ int main(void) {
 
 
 
-
+//Função onde pede os números ao usuário 
 void tela(float *a,float *b,char op,int *x, int *y,float *resultado) {
 	printf("Digite seus números para o cálculo:");
 		
@@ -48,9 +46,9 @@ void tela(float *a,float *b,char op,int *x, int *y,float *resultado) {
 		printf("%.0f",*b);
 		operacoes(a,b,op,x,y,resultado);
 		
-	
 }
 
+//Função onde o usuário escolhe a operação algébrica 
 void operacoes(float *a,float *b,char op,int *x, int *y,float *resultado) {
 	printf("Escolha a operação:");
 	scanf(" %c",&op);
@@ -70,21 +68,25 @@ void operacoes(float *a,float *b,char op,int *x, int *y,float *resultado) {
 	}
 }
 
+//Função onde é realizada a soma
 float soma (float *a,float *b,float *resultado) {
 	*resultado = *a + *b;
 	return *resultado;
 }
 
+//Função onde é realizada a subtração 
 float sub (float *a, float *b,float *resultado) {
 	*resultado = *a - *b;
 	return *resultado;
 }
 
+//Função onde é realizada a multiplicação 
 float multiplicacao (float *a, float *b,float *resultado) {
 	*resultado = (*a) * (*b);
 	return *resultado;
 }
 
+//Função onde é realizada a divisao
 float divisao (float *a,float *b,float *resultado) {
  *resultado = *a / *b;
 	return *resultado;
